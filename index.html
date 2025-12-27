@@ -205,12 +205,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="flex items-center justify-between px-[10%] py-16">
-        <div class="zoom-bounce" style="animation-delay: 1s;">
-            <img src="./images/profile.png" alt="Profile" class="h-[600px] w-[600px] min-w-[400px] glow-cyan">
+    <section id="home" class="flex flex-col md:flex-row items-center justify-between px-[10%] py-16 gap-8">
+        <div class="zoom-bounce w-full md:w-auto flex justify-center" style="animation-delay: 1s;">
+            <img src="./images/profile.png" alt="Profile"
+                class="h-[300px] w-[300px] md:h-[600px] md:w-[600px] md:min-w-[400px] glow-cyan">
         </div>
 
-        <div class="max-w-[50%]">
+        <div class="w-full md:max-w-[50%]">
             <h3 class="text-2xl font-medium fade-in" style="animation-delay: 0.5s;">Hello, I'm</h3>
             <h1 class="text-5xl font-bold fade-in" style="animation-delay: 1s;">Samirul Huda</h1>
             <h2 class="text-3xl font-semibold fade-in" style="animation-delay: 1.5s;">
@@ -280,8 +281,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="flex items-center justify-between px-[10%] py-16 bg-[#006da011]">
-        <div class="max-w-[50%]" data-aos="fade-right" data-aos-duration="1000">
+    <section id="about"
+        class="flex flex-col-reverse md:flex-row items-center justify-between px-[10%] py-16 bg-[#006da011] gap-8">
+        <div class="w-full md:max-w-[50%]" data-aos="fade-right" data-aos-duration="1000">
             <h1 class="text-5xl font-bold mb-4">About Me</h1>
             <h2 class="text-3xl font-semibold mb-6">Web Developer & <span class="text-cyan-400">Backend Developer</span>
             </h2>
@@ -319,8 +321,9 @@
             </div>
         </div>
 
-        <div data-aos="fade-left" data-aos-duration="1000">
-            <img src="./images/profile.png" alt="About" class="h-[600px] w-[600px] min-w-[400px] glow-cyan">
+        <div class="hidden md:flex w-full md:w-auto justify-center" data-aos="fade-left" data-aos-duration="1000">
+            <img src="./images/profile.png" alt="About"
+                class="h-[300px] w-[300px] md:h-[600px] md:w-[600px] md:min-w-[400px] glow-cyan">
         </div>
     </section>
 
@@ -330,11 +333,83 @@
         <p class="text-center text-slate-400 text-lg mb-16" data-aos="fade-down" data-aos-delay="100">My professional
             career journey.</p>
 
-        <div class="max-w-5xl mx-auto relative">
+        <!-- Mobile Layout (Vertical) -->
+        <div class="md:hidden max-w-4xl mx-auto">
+            <div class="relative">
+                <!-- Experience 1 - IT Intern -->
+                <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-slate-800/80 rounded-2xl border-2 border-slate-700 flex items-center justify-center z-10">
+                            <i class="fa-solid fa-briefcase text-cyan-400 text-xl"></i>
+                        </div>
+                        <div
+                            class="flex-1 bg-slate-800/60 border border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition-all duration-300">
+                            <div class="flex flex-col mb-3">
+                                <h3 class="text-xl font-semibold mb-2">IT Intern / Web Developer</h3>
+                                <span class="text-slate-400 text-sm font-medium">2025</span>
+                            </div>
+                            <p class="text-cyan-400 font-medium mb-2">PT Publika Investa Karya</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Completed an internship in the IT department, focusing on web development projects and
+                                learning industry best practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 - Backend Developer -->
+                <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-slate-800/80 rounded-2xl border-2 border-slate-700 flex items-center justify-center z-10">
+                            <i class="fa-solid fa-code text-cyan-400 text-xl"></i>
+                        </div>
+                        <div
+                            class="flex-1 bg-slate-800/60 border border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition-all duration-300">
+                            <div class="flex flex-col mb-3">
+                                <h3 class="text-xl font-semibold mb-2">Backend Developer</h3>
+                                <span class="text-slate-400 text-sm font-medium">2025</span>
+                            </div>
+                            <p class="text-cyan-400 font-medium mb-2">PT Publika Investa Karya</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Developed backend systems and APIs for various client projects, working with modern
+                                frameworks and ensuring scalable architecture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 - Fullstack Developer -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-slate-800/80 rounded-2xl border-2 border-slate-700 flex items-center justify-center z-10">
+                            <i class="fa-solid fa-laptop-code text-cyan-400 text-xl"></i>
+                        </div>
+                        <div
+                            class="flex-1 bg-slate-800/60 border border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition-all duration-300">
+                            <div class="flex flex-col mb-3">
+                                <h3 class="text-xl font-semibold mb-2">Fullstack Web Developer</h3>
+                                <span class="text-slate-400 text-sm font-medium">2023 - Present</span>
+                            </div>
+                            <p class="text-cyan-400 font-medium mb-2">Freelance</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Building full-stack web applications for clients, handling both frontend and backend
+                                development with modern technologies like React.js, Next.js, Laravel, and Express.js.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Layout (Horizontal Timeline) -->
+        <div class="hidden md:block max-w-5xl mx-auto relative">
             <!-- Timeline vertical line -->
             <div class="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-slate-700"></div>
 
-            <!-- Experience 1 - IT Intern -->
+            <!-- Experience 1 - IT Intern (Left) -->
             <div class="mb-16 flex items-center w-full" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-5/12 text-right pr-8">
                     <div
@@ -357,7 +432,7 @@
                 </div>
             </div>
 
-            <!-- Experience 2 - Backend Developer -->
+            <!-- Experience 2 - Backend Developer (Right) -->
             <div class="mb-16 flex items-center w-full" data-aos="fade-up" data-aos-delay="200">
                 <div class="w-5/12 text-right pr-8">
                     <span class="text-slate-400 text-lg font-semibold">2025</span>
@@ -380,7 +455,7 @@
                 </div>
             </div>
 
-            <!-- Experience 3 - Fullstack Developer -->
+            <!-- Experience 3 - Fullstack Developer (Left) -->
             <div class="flex items-center w-full" data-aos="fade-up" data-aos-delay="300">
                 <div class="w-5/12 text-right pr-8">
                     <div
