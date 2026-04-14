@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>E-Commerce Backend System - Project Detail</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+
+        <!-- Mermaid.js for diagrams -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+        <style type="text/tailwindcss">
+            @layer base {
+                * {
+                    @apply m-0 p-0 box-border;
+                }
+
+                body {
+                    font-family: "Jost", sans-serif;
+                    @apply bg-[#081d2c] text-slate-100 leading-relaxed tracking-wide;
+                }
+            }
+
+            .img-card {
+                @apply bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-400 transition-all duration-300 flex flex-col;
+            }
+
+            .img-card img {
+                @apply w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500 cursor-pointer;
+            }
+
+            /* Modal Styles matching index */
+            #photoModal {
+                transition: opacity 0.3s ease;
+            }
+        </style>
+    </head>
+
+    <body class="pt-[73px]">
+        <!-- Header -->
+        <header class="w-full bg-transparent py-4">
+            <nav
+                class="flex items-center justify-between py-4 px-[5%] md:px-[10%] bg-slate-900/95 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-slate-800"
+            >
+                <a
+                    href="../../#portfolio"
+                    class="flex items-center gap-3 text-2xl font-bold text-slate-100 hover:text-cyan-400 transition-colors"
+                >
+                    <i class="fa-solid fa-arrow-left text-lg"></i>
+                    <span
+                        >Kembali<span class="hidden md:inline">
+                            ke Portfolio</span
+                        ></span
+                    >
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <span
+                        class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-sm font-semibold"
+                        >Directus</span
+                    >
+                    <span
+                        class="px-3 py-1 bg-yellow-400/20 text-yellow-400 rounded-full text-sm font-semibold hidden md:inline"
+                        >ElysiaJS</span
+                    >
+                </div>
+            </nav>
+        </header>
+
+        <!-- Project Hero Section -->
+        <section class="py-16 px-[5%] md:px-[10%] max-w-7xl mx-auto">
+            <div data-aos="fade-up" class="mb-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Full-Scale
+                    <span class="text-cyan-400">E-Commerce Backend</span> System
+                </h1>
+                <p class="text-xl font-medium text-pink-400 mb-6">
+                    Headless CMS & Microservice Architecture
+                </p>
+                <p
+                    class="text-lg text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+                >
+                    A highly scalable and modular e-commerce backend system
+                    built using a headless CMS approach and microservices. This
+                    system seamlessly handles the entire business flow including
+                    the product catalog, checkout, complex payment logic,
+                    digital wallet tracking, multi-layer vouchers & promotions,
+                    and automated shipping integration.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-4">
+                    <span
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-semibold"
+                        ><i class="fa-solid fa-server text-cyan-400"></i>
+                        Directus (Headless CMS)</span
+                    >
+                    <span
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-semibold"
+                        ><i class="fa-brands fa-node-js text-green-400"></i>
+                        ElysiaJS (Node.js)</span
+                    >
+                    <span
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-semibold"
+                        ><i class="fa-solid fa-credit-card text-blue-400"></i>
+                        Xendit Payment Gateway</span
+                    >
+                    <span
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-semibold"
+                        ><i class="fa-solid fa-truck-fast text-orange-400"></i>
+                        KiriminAja</span
+                    >
+                    <span
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-semibold"
+                        ><i class="fa-solid fa-database text-yellow-500"></i>
+                        MySQL</span
+                    >
+                </div>
+            </div>
+
+            <!-- Metrics & Impact -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
+                <div
+                    class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 text-center"
+                >
+                    <i
+                        class="fa-solid fa-user-gear text-4xl text-cyan-400 mb-4"
+                    ></i>
+                    <h3 class="text-xl font-bold">My Role</h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Backend Developer (Full Responsibility for API & Logic)
+                    </p>
+                </div>
+                <div
+                    class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 text-center"
+                >
+                    <i
+                        class="fa-solid fa-bolt text-4xl text-yellow-400 mb-4"
+                    ></i>
+                    <h3 class="text-xl font-bold">Performance</h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Designed to support >1000 transactions/day efficiently
+                    </p>
+                </div>
+                <div
+                    class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 text-center"
+                >
+                    <i
+                        class="fa-solid fa-cubes text-4xl text-pink-400 mb-4"
+                    ></i>
+                    <h3 class="text-xl font-bold">Architecture</h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Modular, Clean Architecture & Separation of Concerns
+                    </p>
+                </div>
+                <div
+                    class="bg-slate-800/60 p-6 rounded-xl border border-slate-700 text-center"
+                >
+                    <i
+                        class="fa-solid fa-shield-halved text-4xl text-green-400 mb-4"
+                    ></i>
+                    <h3 class="text-xl font-bold">Security</h3>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Token-based authentication & strict business validation
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diagram Arsitektur -->
+            <div class="mb-20">
+                <h2
+                    class="text-3xl font-bold mb-8 pb-3 border-b-2 border-slate-700 inline-block text-cyan-400"
+                    data-aos="fade-right"
+                >
+                    System Architecture
+                </h2>
+                <div
+                    class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 overflow-x-auto"
+                    data-aos="fade-up"
+                >
+                    <div class="mermaid text-center">
+                        graph TD Client[Client Applications / Frontend] -->
+                        |REST API / JWT| API[ElysiaJS Backend Service] API <-->
+                        |DB Queries & CMS Logic| Directus[Directus Headless CMS]
+                        Directus <--> |Read/Write| DB[(MySQL Database)] API -->
+                        |Payment Intent / Webhook| Xendit[Xendit Payment
+                        Gateway] API --> |Shipping Rates / Tracking|
+                        Shipping[KiriminAja Logistics] subgraph Core Business
+                        Logic API end classDef default
+                        fill:#0f172a,stroke:#334155,stroke-width:2px,color:#f1f5f9;
+                        classDef highlight
+                        fill:#0891b2,stroke:#06b6d4,stroke-width:2px,color:#fff;
+                        classDef external
+                        fill:#b45309,stroke:#d97706,stroke-width:2px,color:#fff;
+                        class API highlight; class Xendit,Shipping external;
+                    </div>
+                </div>
+                <p class="text-slate-400 mt-4 text-sm text-center">
+                    High-level interaction between Headless CMS, Custom Backend
+                    API, and External Providers.
+                </p>
+            </div>
+
+            <!-- Features Showcase -->
+            <div class="mb-20">
+                <h2
+                    class="text-3xl font-bold mb-8 pb-3 border-b-2 border-slate-700 inline-block text-cyan-400"
+                    data-aos="fade-right"
+                >
+                    Key Features & Subsystems
+                </h2>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <!-- Custom Backend -->
+                    <div class="img-card" data-aos="fade-up">
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/BE-postman.PNG"
+                                alt="API Architecture"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                Custom Backend API
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Developed supplemental REST APIs with ElysiaJS
+                                to bypass Directus limitations for complex
+                                operations.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>Highly scalable modular architecture</li>
+                                <li>Clean separation of concerns</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- API Docs -->
+                    <div
+                        class="img-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/BE-dokumentasi-api.png"
+                                alt="API Documentation"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                API Documentation
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Robust developer experience ensured through
+                                comprehensive API endpoints documentation.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>Strict authentication (Bearer Token)</li>
+                                <li>Clear request payloads & responses</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Payment Integration -->
+                    <div
+                        class="img-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/pg-xendit.png"
+                                alt="Xendit Payment"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                Payment Gateway
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Seamless integration with Xendit for handling
+                                diverse transaction modes.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>Direct checkout payments</li>
+                                <li>Wallet top-ups (QRIS, VA, etc.)</li>
+                                <li>Webhook-based asynchronous confirmation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Directus CMS -->
+                    <div class="img-card" data-aos="fade-up">
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/BE-directus.PNG"
+                                alt="Directus Admin"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                Headless CMS (Directus)
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Powered dynamic content, product catalog, and
+                                relational database management.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>
+                                    Custom schemas tailored to complex
+                                    relationships
+                                </li>
+                                <li>
+                                    Intuitive back-office for non-technical
+                                    admins
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Process -->
+                    <div
+                        class="img-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/FE-checkout.png"
+                                alt="Checkout UI"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                Order & Voucher Engine
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Sophisticated multi-layer voucher integration.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>
+                                    Voucher stacking (Store, Product,
+                                    Membership)
+                                </li>
+                                <li>Strict constraints & quota validation</li>
+                                <li>Wallet balance split payments</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Shipping -->
+                    <div
+                        class="img-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div
+                            class="overflow-hidden h-48 sm:h-64 object-cover flex items-center justify-center bg-slate-900"
+                        >
+                            <img
+                                src="../../images/projects/e-commerce/layanan-kiriminaja.png"
+                                alt="Shipping Integration"
+                                onclick="openPhoto(this.src)"
+                            />
+                        </div>
+                        <div class="p-4 bg-slate-800 flex-grow">
+                            <h3
+                                class="font-semibold text-lg text-cyan-400 mb-2"
+                            >
+                                Logistics Integration
+                            </h3>
+                            <p class="text-sm text-slate-400 mb-2">
+                                Integrated directly with KiriminAja for
+                                automated shipping calculations.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-500 list-disc list-inside"
+                            >
+                                <li>Real-time shipping rates</li>
+                                <li>Broad courier coverage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Flowchart -->
+            <div class="mb-20">
+                <h2
+                    class="text-3xl font-bold mb-8 pb-3 border-b-2 border-slate-700 inline-block text-cyan-400"
+                    data-aos="fade-right"
+                >
+                    Checkout & Webhook API Flow
+                </h2>
+                <div
+                    class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 overflow-x-auto"
+                    data-aos="fade-up"
+                >
+                    <div class="mermaid text-center">
+                        sequenceDiagram actor User participant API as ElysiaJS
+                        Backend participant DB as Database participant Xendit as
+                        Xendit PG User->>API: POST /checkout (Items, Voucher,
+                        Address) API->>DB: Validate Stock & Voucher Rules
+                        API->>API: Calculate Total = Sub - Promo + Shipping alt
+                        Balance Sufficient (Wallet Payment) API->>DB: Deduct
+                        Wallet Balance API->>DB: Status -> PAID API-->>User:
+                        Checkout Success! else Needs External Payment
+                        API->>Xendit: Create Invoice Request Xendit-->>API:
+                        Invoice URL & ID API->>DB: Create Pending Order
+                        API-->>User: Payment URL Redirect rect rgb(15, 23, 42)
+                        note right of Xendit: Asynchronous Process (Webhook)
+                        Xendit-->>API: POST /webhook/xendit (Invoice Paid)
+                        API->>API: Verify Webhook Signature API->>DB: Update
+                        Order Status -> PAID API->>DB: Reward Membership Points
+                        end end
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenges & Solutions -->
+            <div class="mb-10">
+                <h2
+                    class="text-3xl font-bold mb-8 pb-3 border-b-2 border-slate-700 inline-block text-cyan-400"
+                    data-aos="fade-right"
+                >
+                    Challenges & Solutions
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Challenge 1 -->
+                    <div
+                        class="bg-slate-800/40 p-6 rounded-xl border-l-4 border-l-red-500 border-t border-b border-r border-slate-700"
+                        data-aos="fade-up"
+                    >
+                        <div class="flex items-start gap-4">
+                            <i
+                                class="fa-solid fa-triangle-exclamation text-2xl text-red-500 mt-1"
+                            ></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Problem: Payment Methods Not Appearing in
+                                    Xendit
+                                </h3>
+                                <p class="text-slate-400 mb-4">
+                                    When sending an invoice creation payload,
+                                    certain expected channels (e.g., specific
+                                    e-wallets or virtual accounts) were not
+                                    rendering on the Xendit payment link.
+                                </p>
+                                <div
+                                    class="bg-slate-900/50 p-4 rounded-lg border border-slate-700"
+                                >
+                                    <h4
+                                        class="text-green-400 font-semibold mb-1"
+                                    >
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                        Technical Solution
+                                    </h4>
+                                    <p class="text-sm text-slate-300">
+                                        Synchronized the `paymentMethods`
+                                        payload configuration to strictly align
+                                        with the activated channels on the
+                                        Xendit merchant dashboard account,
+                                        ensuring dynamic retrieval of available
+                                        channels via API instead of hardcoding
+                                        array lists.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 2 -->
+                    <div
+                        class="bg-slate-800/40 p-6 rounded-xl border-l-4 border-l-orange-500 border-t border-b border-r border-slate-700"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="flex items-start gap-4">
+                            <i
+                                class="fa-solid fa-layer-group text-2xl text-orange-500 mt-1"
+                            ></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Problem: Complexity of Voucher Stacking
+                                </h3>
+                                <p class="text-slate-400 mb-4">
+                                    Allowing multiple layers of vouchers
+                                    (store-wide, product-specific, and
+                                    membership levels) simultaneously led to
+                                    massive edge cases, such as negative cart
+                                    totals or invalid application sequences.
+                                </p>
+                                <div
+                                    class="bg-slate-900/50 p-4 rounded-lg border border-slate-700"
+                                >
+                                    <h4
+                                        class="text-green-400 font-semibold mb-1"
+                                    >
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                        Technical Solution
+                                    </h4>
+                                    <p class="text-sm text-slate-300">
+                                        Engineered a multi-layered, modular
+                                        validation system implementing the
+                                        Strategy Pattern. Rules (minimum
+                                        purchase, quota limits, combinations
+                                        rules) were parsed sequentially,
+                                        applying math derivations safely at each
+                                        middleware pipeline before final
+                                        calculation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 3 -->
+                    <div
+                        class="bg-slate-800/40 p-6 rounded-xl border-l-4 border-l-yellow-500 border-t border-b border-r border-slate-700"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="flex items-start gap-4">
+                            <i
+                                class="fa-solid fa-rotate text-2xl text-yellow-500 mt-1"
+                            ></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">
+                                    Problem: Payment & Order State
+                                    Synchronization
+                                </h3>
+                                <p class="text-slate-400 mb-4">
+                                    Race conditions where users close the
+                                    website prematurely after paying,
+                                    potentially leaving the database with a
+                                    "Pending" order state although funds were
+                                    successfully captured.
+                                </p>
+                                <div
+                                    class="bg-slate-900/50 p-4 rounded-lg border border-slate-700"
+                                >
+                                    <h4
+                                        class="text-green-400 font-semibold mb-1"
+                                    >
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                        Technical Solution
+                                    </h4>
+                                    <p class="text-sm text-slate-300">
+                                        Decoupled client actions from payment
+                                        confirmations by heavily relying on
+                                        webhook-based events. The custom
+                                        ElysiaJS API listens strictly to
+                                        Xendit's encrypted webhook payloads to
+                                        accurately commit state mutations inside
+                                        database transactions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            class="bg-slate-900/80 py-8 text-center border-t border-slate-800"
+        >
+            <p class="text-slate-500">
+                © 2026 Samirul Huda. All rights reserved.
+            </p>
+        </footer>
+
+        <!-- Fullscreen Modal for image enlargement -->
+        <div
+            id="photoModal"
+            class="fixed inset-0 bg-black/90 backdrop-blur-md hidden items-center justify-center z-[60] p-4 z-50 transition-opacity"
+            onclick="closePhoto()"
+        >
+            <button
+                onclick="closePhoto()"
+                class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 bg-cyan-400 rounded-full text-slate-900 flex items-center justify-center text-2xl hover:bg-white transition-colors duration-300"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img
+                id="modalImage"
+                src=""
+                class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-scale-down"
+                onclick="event.stopPropagation()"
+            />
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            // Init AOS
+            AOS.init({
+                duration: 800,
+                easing: "ease-in-out",
+                once: true,
+                offset: 100,
+            });
+
+            // Init Mermaid
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: "dark",
+                fontFamily: "Jost, sans-serif",
+            });
+
+            // Modal Logic
+            function openPhoto(src) {
+                const modal = document.getElementById("photoModal");
+                const modalImg = document.getElementById("modalImage");
+                modalImg.src = src;
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+                document.body.style.overflow = "hidden";
+
+                // Add a small delay then set opacity to ensure transition fires
+                setTimeout(() => {
+                    modal.style.opacity = "1";
+                }, 10);
+            }
+
+            function closePhoto() {
+                const modal = document.getElementById("photoModal");
+                modal.style.opacity = "0";
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                    document.body.style.overflow = "auto";
+                }, 300); // Wait for transition
+            }
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closePhoto();
+            });
+        </script>
+    </body>
+</html>
